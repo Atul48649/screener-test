@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "91bf94e5-dabe-4e37-a0f7-31d1cd3f4c15",
+		"name": "screener_test_apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13902371"
+	},
+	"item": [
+		{
+			"name": "deployments",
+			"item": [
+				{
+					"name": "/deployments",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"model\": \"model-b\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/deployments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"deployments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/deployments/:id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"model\": \"model-a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/deployments/2c856f16-99b0-48c0-a807-42be9242e373",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"deployments",
+								"2c856f16-99b0-48c0-a807-42be9242e373"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/deployments/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"model\": \"model-a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/deployments/81351967-6129-42f8-a0d0-3eaefeda4b2e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"deployments",
+								"81351967-6129-42f8-a0d0-3eaefeda4b2e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "completions",
+			"item": [
+				{
+					"name": "/:deployment_id/completions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10186e137fd43675956ab4619c28702d1b2cd865efa68039",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"prompt\": \"Hello AI Hello AI\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/2c856f16-99b0-48c0-a807-42be9242e373/completions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"2c856f16-99b0-48c0-a807-42be9242e373",
+								"completions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "usage",
+			"item": [
+				{
+					"name": "/usage",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"model\": \"model-a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/usage?api_key=8431ba9ab644755a2c41724c0856defd4f714a28417c1995&from=2026-05-14&to=2026-05-15&group_by=model",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"usage"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "8431ba9ab644755a2c41724c0856defd4f714a28417c1995"
+								},
+								{
+									"key": "from",
+									"value": "2026-05-14"
+								},
+								{
+									"key": "to",
+									"value": "2026-05-15"
+								},
+								{
+									"key": "group_by",
+									"value": "model"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
